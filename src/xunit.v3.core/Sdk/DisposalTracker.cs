@@ -29,8 +29,8 @@ namespace Xunit.Sdk
 
 			disposed = true;
 
-			foreach (var disposable in toDispose)
-				disposable?.Dispose();
+			for (int i = 0; i < toDispose.Count; ++i)
+				toDispose.Pop()?.Dispose();
 		}
 	}
 }
